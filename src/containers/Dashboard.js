@@ -16,7 +16,7 @@ class Dashboard extends React.Component {
 		else {
 			let arr = this.state.arr;
 			arr.push(this.state.inputValue)
-			this.setState({ inputValue: "", arr })
+			this.setState({ inputValue: "", result: "", arr })
 		}
 	}
 
@@ -51,10 +51,10 @@ class Dashboard extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<input id="inputValue" type="text" value={this.state.inputValue || ''} onChange={this.onChangeHandler} />
+				<input id="inputValue" type="number" maxlength="1024" value={this.state.inputValue || ''} onChange={this.onChangeHandler} />
 				<button type="button" onClick={this.onChangeHandler} disabled={!this.state.inputValue}>Click To Push Value Into Array</button>
 				<h5>Your array is : </h5>
-				{this.state.arr.length > 0 ? this.state.arr.map(el => `${el},`) : <p>Array is empty</p>}
+				<ul>{this.state.arr.map(el => <li>{el}</li>)}</ul>
 				<button type="button" onClick={this.getSecondLargestNumber} >Click To Find Largest Value</button>
 				<h5>Second highest Value is:</h5> <p>{this.state.result}</p>
 				<button type="button" id="emptyArray" onClick={this.onChangeHandler} disabled={!this.state.arr.length}>Click To Empty The Array</button>
