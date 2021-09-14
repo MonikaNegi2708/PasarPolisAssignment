@@ -55,8 +55,8 @@ class Dashboard extends React.Component {
 				<button type="button" onClick={this.onChangeHandler} disabled={!this.state.inputValue}>Click To Push Value Into Array</button>
 				<h5>Your array is : </h5>
 				<ul>{this.state.arr.map(el => <li>{el}</li>)}</ul>
-				<button type="button" onClick={this.getSecondLargestNumber} >Click To Find Largest Value</button>
-				<h5>Second highest Value is:</h5> <p>{this.state.result}</p>
+				<button type="button" onClick={this.getSecondLargestNumber} >Click To Find Second Largest Value</button>
+				<h5>Second largest Value is:</h5> <p>{this.state.result}</p>
 				<button type="button" id="emptyArray" onClick={this.onChangeHandler} disabled={!this.state.arr.length}>Click To Empty The Array</button>
 			</React.Fragment >
 		);
